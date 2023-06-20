@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password genrator|CODETWOD</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="customs.css">
+</head>
+
+<body>
+    <div id="wrapper" class="flex flex-col justify-center items-center w-[100vw] h-[100vh] overflow-hidden bg-gradient-to-r from-[#57067A] to-[#160729]">  
+       
+        <div id="container" class="flex justify-center flex-col border-solid border-green-600 w-[450px] gap-6">
+            <h1 class="text-[#CAC4D0] font-bold text-3xl tracking-wider uppercase self-center ">Password generator</h1>
+            <div id="display_container" class="w-[90%] h-[65px] bg-[#170629] relative rounded-2xl self-center drop-shadow-[0_5px_0_rgb(89,6,125)]"> 
+                <input  readonly id="display-pass" class="bg-inherit placeholder-[#AF9737] font-bold uppercase absolute left-3 top-4 text-2xl" placeholder="password" dataPasswordDisplay>
+                <button class="copy-btn absolute right-3 top-4">
+                    <span class="cpy-msg" data-copymsg></span>
+                    <i class="fa-regular fa-copy fa-xl" style="color: #6cf8f3;" ></i>
+                </button>
+            </div> 
+            <div id="input-container" class="h-[380px] drop-shadow-[0_5px_0_rgb(89,6,125)] bg-[#170629] text-white rounded-2xl px-7 w-[90%] self-center ">
+                <div class="flex justify-between  my-6 font-semibold text-2xl"><p>Password length</p> 
+                    <p id="pass_len" class="text-yellow-300">0</p>
+                </div>  
+
+                <input type="range" min="1" max="20"  id="slider"  data-len-slider>
+                <div  class="check">
+                    <input type="checkbox"  name="check" id="uppercase" class="cursor-pointer">
+                    <label for="uppercase">include uppercase</label>
+                </div>
+                <div  class="check">
+                    <input type="checkbox"  name="check" id="lowercase" class="cursor-pointer">
+                    <label for="lowercase">include lowercase</label>
+                </div>
+                <div  class="check">
+                    <input type="checkbox"  name="check" id="nums" class="cursor-pointer">
+                    <label for="nums">include Number</label>
+                </div>
+                <div  class="check"> 
+                    <input type="checkbox"  name="check" id="symbols" class="cursor-pointer">
+                    <label for="symbols">include special symbols</label>
+                </div>
+
+                <div id="strength-container" class="flex justify-between text-xl ">
+                    <p>Strength</p>
+                    <div  class="indicatr" dindicator></div>
+                </div>
+
+                <button id="genrator" class=" w-[95%] h-10 mt-[4%] bg-[#BD14F4] text-2xl drop-shadow-[0_5px_0_rgb(254,228,61)] font-semibold text-yellow-300 rounded-lg ml-2 ">Genrate password</button>
+            </div>
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
